@@ -1,0 +1,47 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": false
+    },
+    {
+      "groupName": "babel packages",
+      "matchPackagePatterns": ["^@babel/"]
+    },
+    {
+      "groupName": "eslint packages",
+      "matchPackagePatterns": ["^eslint"]
+    },
+    {
+      "groupName": "webpack packages",
+      "matchPackagePatterns": ["webpack"]
+    },
+    {
+      "groupName": "react packages",
+      "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"]
+    }
+  ],
+  "schedule": ["before 5am on monday"],
+  "rangeStrategy": "bump",
+  "semanticCommits": "enabled",
+  "labels": ["dependencies"],
+  "assignees": [],
+  "reviewers": [],
+  "postUpgradeTasks": {
+    "commands": [
+      "yarn prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+      "yarn eslint --fix '**/*.{js,jsx,ts,tsx}' || true"
+    ],
+    "fileFilters": ["**/*"],
+    "executionMode": "update"
+  },
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/build/**",
+    "**/dist/**"
+  ]
+}
