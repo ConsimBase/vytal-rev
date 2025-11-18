@@ -1,7 +1,10 @@
 <!--# The Vytal extension was acquired and this repository will no longer receive updates.  -->
 
+<p>
+<img src="https://raw.githubusercontent.com/ConsimBase/vytal-rev/main/promo/large.png") width="300px" alt="Vytal LOGO">
+</p>
 
-# Vytal REV
+## Vytal REV
 
 <!-- <p>
  <a href="https://chrome.google.com/webstore/detail/vytal-spoof-timezone-loca/ncbknoohfjmcfneopnfkapmkblaenokb?utm_source=github"><img src="https://raw.githubusercontent.com/vytal-io/vytal-extension/master/promo/chrome.png" alt="Get Vytal for Chrome"></a>
