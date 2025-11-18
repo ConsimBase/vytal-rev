@@ -41,7 +41,7 @@ Unfortunately Vytal doesn't work on Firefox since Firefox doesn't support the de
 
 The chrome debugger cannot attach itself to chrome://newtab. This can result in data leakage to the first non chrome:// page you navigate to.
 
-### Locale override does not mock language data
+<!-- ### Locale override does not mock language data
 
 Unlike the Chrome devtools location sensor, overriding the locale does not change language data (such as navigator.language or navigator.languages). There is an open ticket about this here: https://bugs.chromium.org/p/chromium/issues/detail?id=1306254
 
@@ -52,7 +52,7 @@ Unlike the Chrome devtools location sensor, overriding the locale does not chang
 ![Screenshot of user agent tab](https://raw.githubusercontent.com/z0ccc/Vytal/master/promo/screenshot-2.png)
 
 ![Screenshot of info tab](https://raw.githubusercontent.com/z0ccc/Vytal/master/promo/screenshot-3.png)
-
+-->
 ## Dev
 
 This application is built with Javascript and React.
