@@ -115,14 +115,6 @@ const UserAgentPage = ({ tab }: UserAgentPageProps) => {
           mb="12px"
         />
       </Box>
-      <Box sx={{ mb: '12px' }}>
-        <Flex sx={{ fontWeight: '700', mb: '2px' }}>Beta</Flex>
-        <Checkbox
-          title="Inject Platform for web Worker"
-          onChange={detachDebugger}
-          checked={browserDefault}
-        />
-      </Box>
     </Page>
   )
 }

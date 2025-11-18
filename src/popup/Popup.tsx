@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { ThemeProvider, Flex, Box } from 'theme-ui'
 import { theme } from 'theme'
-import { MapPin, Globe, Info } from 'react-feather'
+import { MapPin, Globe, Info, Navigation } from 'react-feather'
 import TabItem from './TabItem'
 import LocationPage from './pages/locationPage'
+import IPInfoPage from './pages/ipInfoPage'
 import UserAgentPage from './pages/userAgentPage'
 import InfoPage from './pages/infoPage'
 import '../assets/global.css'
@@ -33,6 +34,11 @@ const Popup = () => {
             onClick={() => setTab('userAgent')}
           />
           <TabItem
+            Icon={<Navigation size={20} />}
+            active={tab === 'ipInfo'}
+            onClick={() => setTab('ipInfo')}
+          />
+          <TabItem
             Icon={<Info size={20} />}
             active={tab === 'info'}
             onClick={() => setTab('info')}
@@ -41,6 +47,7 @@ const Popup = () => {
         <Box sx={{ flex: 1, p: '16px', overflowY: 'auto' }}>
           <LocationPage tab={tab} />
           <UserAgentPage tab={tab} />
+          <IPInfoPage tab={tab} />
           <InfoPage tab={tab} />
         </Box>
       </Flex>

@@ -1,13 +1,13 @@
-# The Vytal extension was acquired and this repository will no longer receive updates.
+<!--# The Vytal extension was acquired and this repository will no longer receive updates.  -->
 
 
-# Vytal
+# Vytal REV
 
-<p>
-<a href="https://chrome.google.com/webstore/detail/vytal-spoof-timezone-loca/ncbknoohfjmcfneopnfkapmkblaenokb?utm_source=github"><img src="https://raw.githubusercontent.com/vytal-io/vytal-extension/master/promo/chrome.png" alt="Get Vytal for Chrome"></a>
+<!-- <p>
+ <a href="https://chrome.google.com/webstore/detail/vytal-spoof-timezone-loca/ncbknoohfjmcfneopnfkapmkblaenokb?utm_source=github"><img src="https://raw.githubusercontent.com/vytal-io/vytal-extension/master/promo/chrome.png" alt="Get Vytal for Chrome"></a>
 <a href="https://microsoftedge.microsoft.com/addons/detail/vytal-spoof-timezone-l/nkaemodamjfefjgbefolnpnlccpdfpap"><img src="https://raw.githubusercontent.com/vytal-io/vytal-extension/master/promo/edge.png" alt="Get Vytal for Microsoft Edge"></a>
 <a href="https://addons.opera.com/en/extensions/details/vytal-spoof-timezone-location-user-agent/"><img src="https://raw.githubusercontent.com/vytal-io/vytal-extension/master/promo/opera.png" alt="Get Vytal for Opera"></a>
-</p>
+</p> -->
 
 Browser extension to spoof your timezone, geolocation, locale and user agent.
 

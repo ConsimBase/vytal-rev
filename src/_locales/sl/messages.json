@@ -1,5 +1,7 @@
 {
-  "extName": { "message": "Vytal - Spoof Timezone, Geolocation & Locale" },
+  "extName": {
+    "message": "Vytal Rev - Spoof Timezone, Geolocation & Locale"
+  },
   "extDesc": {
     "message": "Prevara časovnega pasu, geolokacije, lokalne nastavitve in uporabniškega agenta."
   }

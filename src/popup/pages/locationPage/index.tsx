@@ -6,8 +6,8 @@ import DebouncedInput from 'popup/components/DebouncedInput'
 import detachDebugger from 'utils/detachDebugger'
 import countryLocales from 'utils/countryLocales'
 import configurations from 'utils/configurations'
-import getIp from 'utils/getIp'
-import { ipData } from 'types'
+import getIp, { ipApis } from 'utils/getIp'
+import { ipData } from 'utils/getIpTypes'
 import { RotateCw } from 'react-feather'
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
@@ -24,12 +24,13 @@ const LocationPage = ({ tab }: LocationPageProps) => {
   const [lat, setLatitude] = useState('')
   const [lon, setLongitude] = useState('')
   const [configuration, setConfiguration] = useState('custom')
+  const [ipApi, setIpApi] = useState('')
 
   polyfillCountryFlagEmojis();
 
-  const reloadIp = useCallback(() => {
+  const reloadIp = useCallback((apiName?: string) => {
     setIpInfo('loading...')
-    getIp()
+    getIp(apiName)
       .then((ipDataRes) => {
         setIpData(ipDataRes)
         setIpInfo(`${getFlagEmoji(ipDataRes.countryCode)} ${ipDataRes.query}`)
@@ -52,11 +53,13 @@ const LocationPage = ({ tab }: LocationPageProps) => {
         'locale',
         'lat',
         'lon',
+        'ipApi',
       ],
       (storage) => {
         storage.configuration && setConfiguration(storage.configuration)
         storage.locationBrowserDefault !== undefined &&
           setBrowserDefault(storage.locationBrowserDefault)
+        storage.ipApi && setIpApi(storage.ipApi)
         if (storage.configuration === 'matchIp' && ipData) {
           setTimezone(ipData.timezone)
           setLocale(countryLocales[ipData.countryCode].locale)
@@ -139,6 +142,15 @@ const LocationPage = ({ tab }: LocationPageProps) => {
     }
   }
 
+  const changeIpApi = (e: ChangeEvent<HTMLSelectElement>) => {
+    const selectedApi = e.target.value
+    setIpApi(selectedApi)
+    chrome.storage.local.set({
+      ipApi: selectedApi
+    })
+    reloadIp(selectedApi)
+  }
+
   const getFlagEmoji = (countryCode: string) => {
     const codePoints = countryCode
       .toUpperCase()
@@ -195,6 +207,22 @@ const LocationPage = ({ tab }: LocationPageProps) => {
             }}
           />
         </Flex>
+
+        <Label htmlFor="ipApi">IP Info API</Label>
+        <Select
+          name="ipApi"
+          value={ipApi}
+          onChange={changeIpApi}
+          mb={'8px'}
+        >
+          <option value="">Auto (Try all APIs)</option>
+          {ipApis.map((api) => (
+            <option value={api.name} key={api.name}>
+              {api.displayName}
+            </option>
+          ))}
+        </Select>
+
         <Label htmlFor="configuration">Configuration</Label>
         <Select
           name="configuration"

@@ -1,5 +1,7 @@
 {
-  "extName": { "message": "Vytal - Spoof Timezone, Geolocation & Locale" },
+  "extName": {
+    "message": "Vytal Rev - Spoof Timezone, Geolocation & Locale"
+  },
   "extDesc": {
     "message": "Falsificació de la zona horària, la geolocalització, la configuració regional i l'agent d'usuari."
   }

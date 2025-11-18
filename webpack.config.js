@@ -37,7 +37,6 @@ var options = {
     popup: path.join(__dirname, 'src', 'popup', 'index.tsx'),
     background: path.join(__dirname, 'src', 'background', 'index.ts'),
     'content-script': path.join(__dirname, 'src', 'content-scripts', 'index.ts'),
-    'page-script': path.join(__dirname, 'src', 'content-scripts', 'page-script.ts'),
   },
   chromeExtensionBoilerplate: {
     notHotReload: ['background'],
@@ -47,6 +46,12 @@ var options = {
     path: path.resolve(__dirname, 'build'),
     clean: true,
     publicPath: ASSET_PATH,
+  },
+  // 禁用性能提示，避免字体文件大小警告
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
   },
   module: {
     rules: [
@@ -147,7 +152,6 @@ var options = {
               const filesToCopy = [
                 { from: 'src/assets/icon128.png', to: 'icon128.png' },
                 { from: 'src/assets/icon48.png', to: 'icon48.png' },
-                { from: 'src/assets/Nunito-VariableFont_wght.ttf', to: 'Nunito-VariableFont_wght.ttf' },
               ]
 
               // Copy individual files

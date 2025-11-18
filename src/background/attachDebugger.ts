@@ -39,8 +39,13 @@ const attachDebugger = (tabId: number) => {
       ) {
         chrome.debugger.attach({ tabId: tabId }, '1.3', () => {
           if (chrome.runtime.lastError) {
-            // 忽略已附加的错误，记录其他错误
-            if (!chrome.runtime.lastError.message?.includes('Another debugger is already attached')) {
+            // 忽略已附加的错误和特殊URL访问错误，记录其他错误
+            if (!chrome.runtime.lastError.message?.includes('Another debugger is already attached') &&
+                !chrome.runtime.lastError.message?.includes('Cannot access chrome://') &&
+                !chrome.runtime.lastError.message?.includes('Cannot access edge://') &&
+                !chrome.runtime.lastError.message?.includes('Cannot access opera://') &&
+                !chrome.runtime.lastError.message?.includes('Cannot access brave://') &&
+                !chrome.runtime.lastError.message?.includes('The extensions gallery cannot be scripted')) {
               console.error('[Vytal] Debugger attach error:', chrome.runtime.lastError.message)
             }
             return

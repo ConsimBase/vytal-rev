@@ -1,5 +1,7 @@
 {
-  "extName": { "message": "Vytal - Spoof Timezone, Geolocation & Locale" },
+  "extName": {
+    "message": "Vytal Rev - Spoof Timezone, Geolocation & Locale"
+  },
   "extDesc": {
     "message": "Hamis időzóna, földrajzi hely, terület és felhasználói ügynök. Párosítsa helyadatait VPN-je IP-címével."
   }

@@ -1,12 +1,8 @@
 /**
- * Content Script 入口
+ * Content Script 占位文件
  * 
- * 运行在页面上下文的隔离环境中，负责：
- * 1. 注入页面脚本到主线程
- * 2. 拦截 Web Worker 创建
- * 3. 同步 navigator.platform 等属性到 Worker
+ * 此文件仅作为占位符，用于构建系统。
+ * 实际的content-scripts功能已被移除。
  */
 
-import './main-injector'
-
-console.log('[Vytal Content Script] Loaded successfully')
+console.log('[Vytal] Content script placeholder loaded')

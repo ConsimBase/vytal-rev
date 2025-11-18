@@ -1,5 +1,7 @@
 {
-  "extName": { "message": "Vytal - Spoof Timezone, Geolocation & Locale" },
+  "extName": {
+    "message": "Vytal Rev - Spoof Timezone, Geolocation & Locale"
+  },
   "extDesc": {
     "message": "Apgaulinga laiko juosta, geografinė vieta, lokalė ir vartotojo agentas. Suderinkite vietos duomenis su VPN IP adresu."
   }
